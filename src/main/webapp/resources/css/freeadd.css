@@ -1,0 +1,23 @@
+/**{*/
+/*    list-style:none;*/
+/*    text-decoration: none;*/
+/*    border-collapse:collapse;*/
+/*    margin:0px;*/
+/*    padding:0px;*/
+/*    color:#000;*/
+
+/*}*/
+.layout{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.layout  input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.layout  textarea{
+    width: 100%;
+    margin-top: 10px;
+    min-height: 300px;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="champ">
+	<select id="list" resultType="Champ">
+		SELECT * FROM champ
+	</select>
+	<delete id="delete">
+		DELETE FROM champ WHERE num=#{num}
+	</delete>
+	<insert id="add">
+		INSERT INTO champ (name, region_num, info)
+		VALUES (#{name}, #{regionNum} #{info})
+	</insert>
+	<update id="update">
+		UPDATE champ SET name=#{name}, region_num=#{regionNum}, info=#{info}
+		WHERE num=#{num}
+	</update>
+	<select id="item" resultType="Champ">
+		SELECT * FROM champ WHERE num=#{num}
+	</select>
+</mapper>
