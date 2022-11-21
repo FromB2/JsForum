@@ -37,21 +37,18 @@ public class RootController {
 
     @PostMapping("/login")
     public String login(User user, HttpSession session) {
-        System.out.println("TEST"+user.getId());
-        if (service.login(user)) {
-            System.out.println("OK"+user.getName());
+        if(service.login(user)) {
             session.setAttribute("user", user);
 
             String targetUrl = (String) session.getAttribute("target_url");
-            System.out.println("RootController: " + targetUrl); //그냥 찍어보는거인듯
+            System.out.println("RootController: " + targetUrl);
             session.removeAttribute("target_url");
 
-            if (targetUrl == null)
+            if(targetUrl == null)
                 return "redirect:.";
             else
                 return "redirect:" + targetUrl;
         } else
-            System.out.println("FAIL"+user.getId());
             return "redirect:login";
     }
     @RequestMapping("/logout")

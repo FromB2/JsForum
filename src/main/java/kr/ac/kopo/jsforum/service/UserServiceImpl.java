@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService{
         User item = dao.lgoin(user); // 모델에있는 유저를 가지고 아이템이라는 이름으로 부를거임 그리고 dao한테 보내는거다.
 
         if(item!=null){
-            user.setPw(null);
+            user.setPw(item.getPw());
             user.setName(item.getName());
 
             return true;

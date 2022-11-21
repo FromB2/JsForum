@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="region">
 	<select id="list" resultType="Region">
-		SELECT * FROM region
+		SELECT * FROM region left join champ on champ.region_num = region.num
 	</select>
 	<delete id="delete">
 		DELETE FROM region WHERE num=#{num}
 	</delete>
 	<insert id="add">
-		INSERT INTO region (name, info , region_img)
+		INSERT INTO region (name, info , region_name)
 		VALUES (#{name}, #{info}, #{regionImg})
 	</insert>
 	<update id="update">

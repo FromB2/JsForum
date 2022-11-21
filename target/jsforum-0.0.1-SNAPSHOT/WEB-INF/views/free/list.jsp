@@ -39,7 +39,11 @@
 			<h1>FREE TALK</h1>
 			<div class="searchArea">
 				<form>
-					<input type="search" placeholder="게시물 검색">
+					<select name="kind">
+						<option value="1">이름</option>
+"
+					</select>
+					<input type="text" name="keyword" placeholder="게시물 검색">
 					<span>검색</span>
 				</form>
 			</div>
@@ -72,7 +76,7 @@
 					<td>${item.num}</td>
 					<td><a href="/free/detail/${item.num}">${item.name}</a></td>
 					<td><fmt:formatDate value="${item.pubDate}" pattern="yyyy-MM-dd"/> </td>
-					<td>${item.id}</td>
+					<td>${item.userId}</td>
 				</tr>
 			</c:forEach>
 			</tbody>
@@ -81,7 +85,17 @@
 	</div>
 
 <%--	컨텐츠 끝	--%>
+		<div>
+			<div><a href="?page=1&${pager.query}">처음</a></div>
+			<div><a href="?page=${pager.prev}&${pager.query}">이전</a></div>
 
+			<c:forEach var="page" items="${pager.list}">
+				<div><a href="?page=${page}&${pager.query}">${page}</a></div>
+			</c:forEach>
+
+			<div><a href="?page=${pager.next}&${pager.query}">다음</a></div>
+			<div><a href="?page=${pager.last}&${pager.query}">마지막</a></div>
+		</div>
 		<footer>
 			<div class="jflogo">
 				<a href="/"><img src="../resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>

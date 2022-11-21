@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.jsforum.dao.RegionDao;
 import kr.ac.kopo.jsforum.model.Region;
+
+import java.util.List;
+
 @Service
 public class RegionServiceImpl implements RegionService {
 	@Autowired
@@ -19,6 +22,11 @@ public class RegionServiceImpl implements RegionService {
 	public void add(Region region) {
 		dao.add(region);
 
+	}
+
+	@Override
+	public List<Region> list() {
+		return dao.list();
 	}
 
 }

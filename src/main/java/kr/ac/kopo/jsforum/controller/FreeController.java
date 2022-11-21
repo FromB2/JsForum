@@ -3,6 +3,7 @@ package kr.ac.kopo.jsforum.controller;
 
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.model.User;
+import kr.ac.kopo.jsforum.pager.Pager;
 import kr.ac.kopo.jsforum.service.FreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,8 @@ public class FreeController {
 	FreeService service;
 
 	@RequestMapping("/list")
-	public String list(Model model){
-		List<Free> list = service.list();
+	public String list(Model model, Pager pager){
+		List<Free> list = service.list(pager);
 
 		model.addAttribute("list", list);
 				return path + "list";
@@ -34,7 +35,7 @@ public class FreeController {
 	}
 	@PostMapping("/add")
 	public String add(Free item, @SessionAttribute User user){
-		item.setId( user.getId() );
+		item.setUserId(user.getId());
 		service.add(item);
 
 		return "redirect:list";

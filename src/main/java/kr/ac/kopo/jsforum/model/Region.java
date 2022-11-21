@@ -9,7 +9,7 @@ public class Region {
     private int num;
     private String name;
     private String info;
-    private String reigonImg;
+    private String caption;
 
 
 }

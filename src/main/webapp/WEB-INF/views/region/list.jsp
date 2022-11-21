@@ -11,79 +11,52 @@
 <title>지역 리스트</title>
 </head>
 <body>
-<script type="text/javascript"></script>
-	
-	<div class="wrap">
-		<div class="intro_bg">
-			<div class="header">
-				<ul class="nav">
-					<div class="jflogo">
-						<a href="/"><img src="../resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
-					</div>
-					<li><a href="/champ/list">CHAMP</a></li>
-					<li><a href="/region/list">REGION</a></li>
-					<li><a href="/free/list">FREE TALK</a></li>
-					<c:if test="${sessionScope.user == null}"><li><a href="/login">LOG IN</a></li>
-					</c:if>
-
-					<c:if test="${sessionScope.user != null}"><li><a href="/logout">LOG OUT</a></li>
-					</c:if>
-				</ul>
-				
-			</div>
-			<div class="intro_text">
-				<h1>REGIONS</h1>
-				<div class="searchArea">
-					<form>
-					<input type="search" placeholder="지역 검색">
-						<span>검색</span>
-					</form>
-				</div> 
-			</div>
-		
-		<!--인트로 끝-->
-		
-			<ul class="contents">
-				<li><a href="detail/1"><img src="../resources/image/bandle-city_bg.jpg"></a></li>
-				<li><a href="regiondetail"><img src="../resources/image/zaun_bg.jpeg"></a></li>
-				<li><a href="regiondetail"><img src="../resources/image/void_bg.jpg"></a></li>
-				<li><a href="regiondetail"><img src="../resources/image/shurima_bg.jpg"></a></li>
-			</ul>
-			
-			
-			<ul class="contents">
-				<li><a href="detail"><img src="../resources/image/bilgewater_bg.jpg"></a></li>
-				<li><a href="detail"><img src="../resources/image/demacia_bg.jpeg"></a></li>
-				<li><a href="detail"><img src="../resources/image/freljord_bg.jpg"></a></li>
-				<li><a href="detail"><img src="../resources/image/ionia_bg.jpg"></a></li>
-			</ul>
-			
-			<ul class="contents">
-				<li><a href="detail"><img src="../resources/image/ixtal_bg.jpg"></a></li>
-				<li><a href="detail"><img src="../resources/image/mount-targon_bg.jpg"></a></li>
-				<li><a href="detail"><img src="../resources/image/noxus_bg.jpg"></a></li>
-				<li><a href="detail"><img src="../resources/image/piltover_bg.jpg"></a></li>
-			</ul>
-			<ul class="contents">
-				<li><a href="detail"><img src="../resources/image/shadow-isles_bg.jpg"></a></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		
-		<footer>
+<div class="wrap">
+	<div class="intro_bg">
+		<div class="header">
+			<ul class="nav">
 				<div class="jflogo">
-						<a href="/"><img src="../resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
+					<a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a>
 				</div>
-				
-				<div>
-					CEO.황주선<br>
-					Addr.대전광역시 동구 우암로352-21 비전관6층<br>
-					010-1234-5678<br>
-					COPYRIGHT 2022. JF. ALL RIGHT RESERVED.
-				</div>
-		</footer>
+				<li><a href="/champ/list">챔피언</a></li>
+				<li><a href="/region/list">지역</a></li>
+				<li><a href="/free/list">자유게시판</a></li>
+				<c:if test="${sessionScope.user == null}">
+					<div class="nav_login"><a href="/login">로그인</a></div>
+				</c:if>
+
+				<c:if test="${sessionScope.user != null}">
+					<div class="nav_login"><a href="/logout">로그아웃</a></div>
+				</c:if>
+			</ul>
 		</div>
+		<div class="intro_text">
+			<h1>REGION</h1>
+			<div class="searchArea">
+				<form>
+					<input type="search" placeholder="지역 검색">
+					<span>검색</span>
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+			<c:forEach var="item" items="${list}">
+				<a href="detail/${item.num}">
+					<div class="card"><img src="/resources/image2/${item.name}.jpg">
+						<div class="contents"><h2>${item.name}<span>${item.caption}</span></h2></div>
+					</div>
+				</a>
+			</c:forEach>
+		</div>
+		<footer class="footer">
+			<div class="nav">
+				<div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a>
+				</div>
+				<div>COPYRIGHT 2022. JF. ALL RIGHT RESERVED.</div>
+			</div>
+		</footer>
 	</div>
+</div>
 </body>
 </html>

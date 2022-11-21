@@ -10,10 +10,9 @@ public class Free {
 	private int num;
 	private String name;
 	private Date pubDate;
-	private String Id;
+	private String userId;
 	private String username;
 	private String contents;
-	
-	
+
 
 }

@@ -2,6 +2,7 @@ package kr.ac.kopo.jsforum.service;
 
 import kr.ac.kopo.jsforum.dao.FreeDao;
 import kr.ac.kopo.jsforum.model.Free;
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class FreeServiceImpl implements FreeService{
 
 
     @Override
-    public List<Free> list() {
-        return dao.list();
+    public List<Free> list(Pager pager) {
+        return dao.list(pager);
     }
 
     @Override

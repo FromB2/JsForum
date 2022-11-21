@@ -11,6 +11,7 @@ import kr.ac.kopo.jsforum.service.RegionService;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 
 
 @Controller
@@ -23,8 +24,10 @@ public class RegionController {
 	
 	
 	@RequestMapping("/list")
-		public String list() {
-		
+		public String list(Model model) {
+		List<Region> list =service.list();
+
+		model.addAttribute("list",list);
 		return path + "list";
 	}
 	@RequestMapping("/detail/{num}")
@@ -40,11 +43,5 @@ public class RegionController {
 		return path +"add";
 	}
 
-	@PostMapping("/add")
-	public String add(Region region, @RequestParam("regionImg")File regionImg) {
-		String filename = regionImg.getName();
-		region.setReigonImg(filename);
-		service.add(region);
-		return "redirect:/region";
-	}
+
 }
