@@ -18,7 +18,7 @@
 			<div class="header">
 				<ul class="nav">
 					<div class="jflogo">
-						<a href="/"><img src="../resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
+						<a href="/"><img src="/resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
 					</div>
 					<li><a href="/champ/list">CHAMP</a></li>
 					<li><a href="/region/list">REGION</a></li>

@@ -1,11 +1,11 @@
 package kr.ac.kopo.jsforum.dao;
 
 import kr.ac.kopo.jsforum.model.Free;
+import kr.ac.kopo.jsforum.pager.Pager;
 
 import java.util.List;
 
 public interface FreeDao {
-    List<Free> list();
 
     void add(Free item);
 
@@ -14,4 +14,6 @@ public interface FreeDao {
     void update(Free item);
 
     void delete(int num);
+
+    List<Free> list(Pager pager);
 }

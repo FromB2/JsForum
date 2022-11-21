@@ -15,7 +15,7 @@
 	z-index: 1;
 }
 .intro_bg::before{
-	background-image: url("../image/shadow-isles_bg.jpg");
+	background-image: url("../image2/그림자군도.jpg");
 	background-position:center center; 
 	background-attachment:fixed;
 	background-size: cover;

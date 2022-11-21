@@ -1,6 +1,7 @@
 package kr.ac.kopo.jsforum.dao;
 
 import kr.ac.kopo.jsforum.model.Free;
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,10 +13,6 @@ public class FreeDaoImpl implements FreeDao{
     @Autowired
     SqlSession sql;
 
-    @Override
-    public List<Free> list() {
-        return sql.selectList("free.list");
-    }
 
     @Override
     public void add(Free item) {
@@ -35,5 +32,10 @@ public class FreeDaoImpl implements FreeDao{
     @Override
     public void delete(int num) {
         sql.delete("free.delete",num);
+    }
+
+    @Override
+    public List<Free> list(Pager pager) {
+        return sql.selectList("free.list", pager);
     }
 }

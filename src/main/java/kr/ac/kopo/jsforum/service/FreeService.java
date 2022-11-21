@@ -1,11 +1,12 @@
 package kr.ac.kopo.jsforum.service;
 
 import kr.ac.kopo.jsforum.model.Free;
+import kr.ac.kopo.jsforum.pager.Pager;
 
 import java.util.List;
 
 public interface FreeService {
-    List<Free> list();
+    List<Free> list(Pager pager);
 
     void add(Free item);
 
@@ -14,4 +15,5 @@ public interface FreeService {
     void update(Free item);
 
     void delete(int num);
+
 }

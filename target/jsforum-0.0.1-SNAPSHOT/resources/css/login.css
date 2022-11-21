@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("../image/ornn.jpg");
+    background: url("../image3/ornn.jpg");
     background-size: cover;
 }
 body::before{

@@ -19,17 +19,17 @@
         <div class="header">
             <ul class="nav">
                 <div class="jflogo">
-                    <a href="/"><img src="/resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
+                    <a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a>
                 </div>
-                <li><a href="/champ/list">CHAMP</a></li>
-                <li><a href="/region/list">REGION</a></li>
-                <li><a href="/free/list">FREE TALK</a></li>
+                <li><a href="/champ/list">챔피언</a></li>
+                <li><a href="/region/list">지역</a></li>
+                <li><a href="/free/list">자유게시판</a></li>
                 <c:if test="${sessionScope.user == null}">
-                    <li><a href="/login">LOG IN</a></li>
+                    <li><a href="/login">로그인</a></li>
                 </c:if>
 
                 <c:if test="${sessionScope.user != null}">
-                    <li><a href="/logout">LOG OUT</a></li>
+                    <li><a href="/logout">로그아웃</a></li>
                 </c:if>
             </ul>
 
@@ -38,7 +38,7 @@
             <h1>CHAMP</h1>
             <div class="searchArea">
                 <form>
-                    <input type="search" placeholder="지역 검색">
+                    <input type="search" placeholder="챔피언 검색">
                     <span>검색</span>
                 </form>
             </div>
@@ -46,79 +46,20 @@
 
         <!--인트로 끝-->
         <div class="list_wrap">
-            <ul class="item">
-
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Teemo.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>티모</strong><p>밴들시티</p></div>
+            <c:forEach var="item" items="${list}">
+                <ul class="item">
+                    <li><a href="/champ/detail/${item.num}">
+                        <div class="card_box"><img src="/resources/image/${item.name}.jpg" class="card_img"></div>
+                        <div class="card_text"><strong>${item.name}</strong>
+                            <p>${item.regionName}</p></div>
                     </a>
-                </li>
-
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Ekko.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>에코</strong><p>자운</p></div>
-                    </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/kaisa.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>카이사</strong><p>공허</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Azir.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>아지르</strong><p>슈리마</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Gangplank.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>갱플랭크</strong><p>빌지워터</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Garen.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>가렌</strong><p>데마시아</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Ashe.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>애쉬</strong><p>프렐요드</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Irelia.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>이렐리아</strong><p>아이오니아</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/qiyana.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>키아나</strong><p>이쉬탈</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/AurelionSol.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>아우렐리온 솔</strong><p>타곤산</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Darius.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>다리우스</strong><p>녹서스</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Jayce.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>제이스</strong><p>필트오버</p></div>
-                </a>
-                </li>
-                <li ><a href="#">
-                    <div class="card_box"><img src="/resources/image/Thresh.jpg" class="card_img"></div>
-                    <div class="card_text"><strong>쓰레쉬</strong><p>그림자군도</p></div>
-                </a>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </c:forEach>
         </div>
         <footer>
             <div class="jflogo">
-                <a href="/"><img src="/resources/image/jf_logo.png" style="width: 65px; height: 45px;"></a>
+                <a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a>
             </div>
 
             <div>

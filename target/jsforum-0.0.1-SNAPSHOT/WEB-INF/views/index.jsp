@@ -4,14 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 
-    <link href="resources/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/index.css" rel="stylesheet" type="text/css">
 
     <meta charset="UTF-8">
     <title>JSFORUM</title>

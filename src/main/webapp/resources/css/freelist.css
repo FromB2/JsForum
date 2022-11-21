@@ -15,7 +15,7 @@
 	z-index: 1;
 }
 .intro_bg::before{
-	background-image: url("../image/bilgewater_bg.jpg");
+	background-image: url("../image2/빌지워터.jpg");
 	background-position:center center; 
 	background-attachment:fixed;
 	width:100vw;

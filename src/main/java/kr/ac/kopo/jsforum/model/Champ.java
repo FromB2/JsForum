@@ -10,6 +10,7 @@ public class Champ {
 	private int num;
 	private String name;
 	private int regionNum;
+	private String regionName;
 	private String info;
 
 }
