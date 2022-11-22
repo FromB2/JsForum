@@ -8,7 +8,9 @@
     text-decoration: none;
     list-style: none;
 }
-.wrap{}
+.wrap{
+
+}
 video {
     position: fixed;
     z-index: -1;
@@ -37,11 +39,17 @@ video {
 .footer .nav > div:nth-child(2){
     flex: 7.5;
 }
+.nav_login span{
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
 .nav_login a{
     color: #ffffff;
     border: solid 1px #ffffff;
-    padding: 8px 25px;
-    border-radius: 100px
+    padding: 7px 25px;
+    border-radius: 100px;
+    font-size:14px;
 }
 .nav_login a:hover{
    background: rgba(255,255,255,0.5);

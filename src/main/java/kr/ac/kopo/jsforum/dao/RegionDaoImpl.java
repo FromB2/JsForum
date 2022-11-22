@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.dao;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -26,8 +27,8 @@ public class RegionDaoImpl implements RegionDao {
 	}
 
 	@Override
-	public List<Region> list() {
-		return sql.selectList("region.list");
+	public List<Region> list(Pager pager) {
+		return sql.selectList("region.list",pager);
 	}
 
 

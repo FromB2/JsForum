@@ -2,11 +2,13 @@ package kr.ac.kopo.jsforum.controller;
 
 import java.util.List;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,13 +24,21 @@ public class ChampController {
 		ChampService service;
 	
 	@RequestMapping("/list")
-		public String list(Model model) {
-		List<Champ> list = service.list();
+		public String list(Model model, Pager pager) {
+		List<Champ> list = service.list(pager);
 
 		model.addAttribute("list", list);
 		
 		return path + "list";
 	}
+	@RequestMapping("/detail/{num}")
+	public String detail(@PathVariable int num, Model model){
+		Champ item = service.item(num);
+
+		model.addAttribute("item",item);
+		return  path + "detail";
+	}
+
 	
 	@RequestMapping("/delete")
 		public String delete(int num) {

@@ -8,8 +8,10 @@
 
         <h1>${item.name}</h1>
         <p>${item.contents}</p>
+        <c:if test="${sessionScope.user.id==item.userId}">
     <a href="update/${item.num}"><button>수정하기</button></a>
     <a href="delete/${item.num}"><button>삭제하기</button></a>
+        </c:if>
     <a href="../list"><button>목록으로 돌아가기</button></a>
     </body>
 </html>

@@ -3,7 +3,7 @@
 <mapper namespace="free">
 
 	<select id="total" resultType="Integer">
-		SELECT COUNT(*) FROM game
+		SELECT COUNT(*) FROM free
 	</select>
 
 	<sql id="search">
@@ -15,12 +15,12 @@
 				</where>
 			</if>
 
-		ORDER BY num
+		ORDER BY num desc
 		LIMIT ${offset},${perPage}
 	</sql>
 
 	<select id="list" resultType="Free">
-		SELECT * FROM free
+		SELECT * FROM (<include refid="search"></include>) T1
 	</select>
 	<delete id="delete">
 		DELETE FROM free WHERE num=#{num}
@@ -34,7 +34,7 @@
 		WHERE num=#{num}
 	</update>
 	<select id="item" resultType="Free">
-		SELECT * FROM free left join  user on free.id = user.id WHERE num=#{num}
+		SELECT * FROM free left join  user on free.user_id = user.id WHERE num=#{num}
 
 	</select>
 </mapper>

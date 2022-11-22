@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.controller;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,8 +25,8 @@ public class RegionController {
 	
 	
 	@RequestMapping("/list")
-		public String list(Model model) {
-		List<Region> list =service.list();
+		public String list(Model model, Pager pager) {
+		List<Region> list =service.list(pager);
 
 		model.addAttribute("list",list);
 		return path + "list";

@@ -17,6 +17,10 @@ public class FreeServiceImpl implements FreeService{
 
     @Override
     public List<Free> list(Pager pager) {
+        int total = dao.total(pager);
+
+        pager.setTotal(total);
+
         return dao.list(pager);
     }
 

@@ -3,6 +3,14 @@
 <mapper namespace="region">
 	<select id="list" resultType="Region">
 		SELECT * FROM region left join champ on champ.region_num = region.num
+		<if test="search == 1">
+			<where>
+				region.name LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</where>
+		</if>
+
+		ORDER BY region.num
+
 	</select>
 	<delete id="delete">
 		DELETE FROM region WHERE num=#{num}

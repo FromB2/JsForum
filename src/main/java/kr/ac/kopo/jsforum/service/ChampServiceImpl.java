@@ -2,6 +2,7 @@ package kr.ac.kopo.jsforum.service;
 
 import java.util.List;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,7 @@ public class ChampServiceImpl implements ChampService {
 	@Autowired
 		ChampDao dao;
 	
-	@Override
-	public List<Champ> list() {
-		
-		return dao.list();
-	}
+
 
 	@Override
 	public void delete(int num) {
@@ -42,6 +39,11 @@ public class ChampServiceImpl implements ChampService {
 	public void update(Champ item) {
 		dao.update(item);
 
+	}
+
+	@Override
+	public List<Champ> list(Pager pager) {
+		return dao.list(pager);
 	}
 
 }

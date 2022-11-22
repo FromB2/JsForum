@@ -38,4 +38,9 @@ public class FreeDaoImpl implements FreeDao{
     public List<Free> list(Pager pager) {
         return sql.selectList("free.list", pager);
     }
+
+    @Override
+    public int total(Pager pager) {
+        return sql.selectOne("free.total", pager);
+    }
 }

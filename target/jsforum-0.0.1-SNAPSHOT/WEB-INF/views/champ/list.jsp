@@ -12,8 +12,6 @@
     <title>챔피언 리스트</title>
 </head>
 <body>
-
-<div class="wrap">
     <div class="intro_bg">
         <div class="header">
             <ul class="nav">
@@ -28,16 +26,20 @@
                 </c:if>
 
                 <c:if test="${sessionScope.user != null}">
-                    <div class="nav_login"><a href="/logout">로그아웃</a></div>
+                    <div class="nav_login"><span>${sessionScope.user.name} 님 환영합니다.</span><a href="/logout">로그아웃</a>
+                    </div>
                 </c:if>
             </ul>
         </div>
         <div class="intro_text">
             <h1>CHAMPION</h1>
             <div class="searchArea">
-                <form>
-                    <input type="search" placeholder="챔피언 검색">
-                    <span>검색</span>
+                <form class="form_size" method="get">
+                    <select class="select_hide" name="search">
+                        <option value="1"></option>
+                    </select>
+                    <input name="keyword" type="text" placeholder="챔피언 검색">
+                    <button>검색</button>
                 </form>
             </div>
         </div>
@@ -53,7 +55,8 @@
         </div>
         <footer class="footer">
             <div class="nav">
-                <div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a>
+                <div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png"
+                                                     style="width: 65px; height: 45px;"></a>
                 </div>
                 <div>COPYRIGHT 2022. JF. ALL RIGHT RESERVED.</div>
             </div>

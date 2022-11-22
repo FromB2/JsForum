@@ -2,6 +2,7 @@ package kr.ac.kopo.jsforum.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,12 +14,7 @@ public class ChampDaoImpl implements ChampDao {
 
 	@Autowired
 	SqlSession sql;
-	
-	@Override
-	public List<Champ> list() {
-		
-		return sql.selectList("champ.list");
-	}
+
 
 	@Override
 	public void delete(int num) {
@@ -42,6 +38,11 @@ public class ChampDaoImpl implements ChampDao {
 	public void update(Champ item) {
 		sql.update("champ.update", item);
 
+	}
+
+	@Override
+	public List<Champ> list(Pager pager) {
+		return sql.selectList("champ.list",pager);
 	}
 
 }

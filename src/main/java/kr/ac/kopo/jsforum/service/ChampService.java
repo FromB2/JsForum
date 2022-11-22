@@ -3,10 +3,10 @@ package kr.ac.kopo.jsforum.service;
 import java.util.List;
 
 import kr.ac.kopo.jsforum.model.Champ;
+import kr.ac.kopo.jsforum.pager.Pager;
 
 public interface ChampService {
 
-	List<Champ> list();
 
 	void delete(int num);
 
@@ -16,4 +16,5 @@ public interface ChampService {
 
 	void update(Champ item);
 
+	List<Champ> list(Pager pager);
 }

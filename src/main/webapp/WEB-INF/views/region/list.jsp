@@ -26,16 +26,19 @@
 				</c:if>
 
 				<c:if test="${sessionScope.user != null}">
-					<div class="nav_login"><a href="/logout">로그아웃</a></div>
+					<div class="nav_login"><span>${sessionScope.user.name} 님 환영합니다.</span><a href="/logout">로그아웃</a></div>
 				</c:if>
 			</ul>
 		</div>
 		<div class="intro_text">
 			<h1>REGION</h1>
 			<div class="searchArea">
-				<form>
-					<input type="search" placeholder="지역 검색">
-					<span>검색</span>
+				<form method="get">
+					<select class="select_hide" name="search">
+						<option value="1"></option>
+					</select>
+					<input name="keyword" type="text" placeholder="지역 검색">
+					<button>검색</button>
 				</form>
 			</div>
 		</div>

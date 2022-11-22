@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.service;
 
+import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +26,10 @@ public class RegionServiceImpl implements RegionService {
 	}
 
 	@Override
-	public List<Region> list() {
-		return dao.list();
+	public List<Region> list(Pager pager) {
+		return dao.list(pager);
 	}
+
+
 
 }

@@ -16,4 +16,6 @@ public interface FreeDao {
     void delete(int num);
 
     List<Free> list(Pager pager);
+
+    int total(Pager pager);
 }
