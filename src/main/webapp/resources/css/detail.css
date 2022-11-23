@@ -82,7 +82,7 @@ body{
 }
 
 
-.footer{
+.footer_detail{
     display: flex;
     background: rgba(0,0,0,0.5);
     padding-top: 1.5%;
@@ -90,9 +90,9 @@ body{
     color: #ffffff;
     margin-top: 10%;
 }
-.footer .nav > div:nth-child(1){
+.footer_detail .nav > div:nth-child(1){
     flex: 5;
 }
-.footer .nav > div:nth-child(2){
+.footer_detail .nav > div:nth-child(2){
     flex: 7.5;
 }

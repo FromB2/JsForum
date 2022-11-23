@@ -37,9 +37,10 @@
         <img src="/resources/image4/라인.png">
         <h3>${item.nickName}</h3>
     </div>
-    <div class="emblem">
+    <a href="/region/detail/${item.num}"><div class="emblem">
         <img src="/resources/image4/emblems/${item.regionName}_엠블렘.png">
     </div>
+    </a>
     <div class="detail_text1">
         ${item.caption}
     </div>
@@ -50,11 +51,9 @@
 </div>
 
 </div>
-<footer class="footer">
+<footer class="footer_detail">
     <div class="nav">
-        <div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png"
-                                             style="width: 65px; height: 45px;"></a>
-        </div>
+        <div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png" style="width: 65px; height: 45px;"></a></div>
         <div>COPYRIGHT 2022. JF. ALL RIGHT RESERVED.</div>
     </div>
 </footer>
