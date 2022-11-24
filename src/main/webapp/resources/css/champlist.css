@@ -136,7 +136,7 @@
     padding-bottom: 5%;
 }
 .intro_text h1{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', serif;
 }
 .container{
     display: flex;

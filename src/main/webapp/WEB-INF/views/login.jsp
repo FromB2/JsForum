@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Hwang joosun
-  Date: 2022-10-30
-  Time: 오후 10:43
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -15,7 +8,6 @@
     </script>
     <title>로그인 페이지</title>
     <link href="resources/css/login.css" rel="stylesheet" type="text/css">
-    <%--  <script src="jquery-3.4.1js"></script>--%>
 
     <script>
         let id = $('#id');
@@ -45,30 +37,26 @@
     <form method="post">
         <div class="int-area">
             <input type="text" name="id" id="id" autocomplete="off" required>
-            <label for="id">USER ID</label>
+            <label for="id">아이디</label>
         </div>
 
         <div class="int-area">
             <input type="password" name="pw" id="pw" autocomplete="off" required>
-            <label for="id">PASSWORD</label>
+            <label for="id">비밀번호</label>
         </div>
         <div class="btn-area">
             <button id="btn"
-                    type="submit">LOGIN
+                    type="submit">로그인
             </button>
         </div>
         <div class="caption">
             <div>
-                <a href="/signup">Sign up</a>
-            </div>
-            <div>
-                <a href="">Forgot Password?</a>
+                <a href="/signup">회원가입</a>
             </div>
         </div>
     </form>
 
 </section>
-<%--  <script type="text/javascript" src="resources/js/login.js"></script>--%>
 
 </body>
 </html>

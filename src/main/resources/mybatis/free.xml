@@ -50,7 +50,7 @@
         VALUES (#{replyContent}, #{replyWriter}, #{replyFreeNum})
     </insert>
 
-    <select id="replyList" resultType="Comment">
+    <select id="replyList" resultType="Reply">
         SELECT reply.replyNum, reply.replyContent,reply.regDate,user.id
         FROM reply LEFT JOIN free ON(reply.replyFreeNum=free.num)
                    LEFT JOIN user ON(reply.replyWriter=user.num)

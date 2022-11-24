@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class Comment {
+public class Reply {
 
     private int replyWriter;
     private int replyFreeNum;

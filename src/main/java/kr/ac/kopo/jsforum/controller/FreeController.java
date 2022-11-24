@@ -1,7 +1,7 @@
 package kr.ac.kopo.jsforum.controller;
 
 
-import kr.ac.kopo.jsforum.model.Comment;
+import kr.ac.kopo.jsforum.model.Reply;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.model.User;
 import kr.ac.kopo.jsforum.pager.Pager;
@@ -42,9 +42,8 @@ public class FreeController {
 
         return "redirect:list";
     }
-
     @PostMapping("/detail/{num}")
-    public String replyAdd(@PathVariable int num, @SessionAttribute User user, Comment reply) {
+    public String replyAdd(@PathVariable int num, @SessionAttribute User user, Reply reply) {
         reply.setReplyWriter(user.getNum());
         reply.setReplyFreeNum(num);
 
@@ -54,6 +53,17 @@ public class FreeController {
         return "redirect:/free/detail/" + num;
     }
 
+    @RequestMapping("/detail/{num}")
+    public String detail(@PathVariable int num, Model model) {
+        Free item = service.item(num);
+        model.addAttribute("item", item);
+
+        List<Reply> replyList = service.replyList(num);
+        model.addAttribute("replyList", replyList);
+
+        return path + "detail";
+
+    }
     @GetMapping("/detail/update/{num}")
     public String update(@PathVariable int num, Model model) {
         Free item = service.item(num);
@@ -70,17 +80,6 @@ public class FreeController {
         return "redirect:../{num}";
     }
 
-    @RequestMapping("/detail/{num}")
-    public String detail(@PathVariable int num, Model model) {
-        Free item = service.item(num);
-        model.addAttribute("item", item);
-
-        List<Comment> replyList = service.replyList(num);
-        model.addAttribute("replyList", replyList);
-
-        return path + "detail";
-
-    }
 
     @RequestMapping("/detail/delete/{num}")
     public String delete(@PathVariable int num) {

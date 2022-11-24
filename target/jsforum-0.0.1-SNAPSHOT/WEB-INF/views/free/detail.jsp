@@ -5,6 +5,7 @@
 <head>
     <title>게시글 상세 페이지</title>
     <link href="/resources/css/freedetail.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <div class="header">
@@ -67,8 +68,8 @@
 <%--    items = 스프링에서 모델에서 담은거         /////// var는 부를 이름--%>
     <c:forEach items="${replyList}" var="reply">
         <div class="reply_list">
-            <span> ${reply.id} </span>
-            <span> ${reply.regDate} </span>
+            <strong>${reply.id}</strong>
+            <span>(<fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm:ss"/>)</span>
             <p>${reply.replyContent}</p>
         </div>
     </c:forEach>
@@ -80,5 +81,13 @@
     </form>
 
 </div>
+<footer class="footer">
+    <div class="nav">
+        <div class="jflogo"><a href="/"><img src="/resources/image3/jf_logo.png"
+                                             style="width: 65px; height: 45px;"></a>
+        </div>
+        <div>COPYRIGHT 2022. JF. ALL RIGHT RESERVED.</div>
+    </div>
+</footer>
 </body>
 </html>

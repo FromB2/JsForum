@@ -1,11 +1,10 @@
 package kr.ac.kopo.jsforum.service;
 
 import kr.ac.kopo.jsforum.dao.FreeDao;
-import kr.ac.kopo.jsforum.model.Comment;
+import kr.ac.kopo.jsforum.model.Reply;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,12 +46,12 @@ public class FreeServiceImpl implements FreeService{
     }
 
     @Override
-    public void replyAdd(Comment reply) {
+    public void replyAdd(Reply reply) {
         dao.replyAdd(reply);
     }
 
     @Override
-    public List<Comment> replyList(int num) {
+    public List<Reply> replyList(int num) {
         return dao.replyList(num);
     }
 }

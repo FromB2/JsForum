@@ -11,7 +11,7 @@
 		<typeAlias type="kr.ac.kopo.jsforum.model.Region" alias="Region" /><!-- 클래스위치를알려주는놈 -->
 		<typeAlias type="kr.ac.kopo.jsforum.model.Free" alias="Free" />
 		<typeAlias type="kr.ac.kopo.jsforum.model.User" alias="User" />
-		<typeAlias type="kr.ac.kopo.jsforum.model.Comment" alias="Comment" />
+		<typeAlias type="kr.ac.kopo.jsforum.model.Reply" alias="Reply" />
 	</typeAliases>
 
 	<mappers>
