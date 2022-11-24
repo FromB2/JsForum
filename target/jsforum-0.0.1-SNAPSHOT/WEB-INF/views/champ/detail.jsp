@@ -47,7 +47,6 @@
     <div class="detail_text2">
         ${item.info}
     </div>
-
 </div>
 
 </div>

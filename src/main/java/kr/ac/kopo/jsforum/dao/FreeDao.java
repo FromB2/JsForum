@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.dao;
 
+import kr.ac.kopo.jsforum.model.Comment;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.pager.Pager;
 
@@ -18,4 +19,8 @@ public interface FreeDao {
     List<Free> list(Pager pager);
 
     int total(Pager pager);
+
+    void replyAdd(Comment reply);
+
+    List<Comment> replyList(int num);
 }

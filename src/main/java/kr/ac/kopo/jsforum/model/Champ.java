@@ -15,4 +15,5 @@ public class Champ {
 	private String nickName;
 	private String caption;
 
+
 }

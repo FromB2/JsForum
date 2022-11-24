@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.dao;
 
+import kr.ac.kopo.jsforum.model.Comment;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.pager.Pager;
 import org.apache.ibatis.session.SqlSession;
@@ -42,5 +43,15 @@ public class FreeDaoImpl implements FreeDao{
     @Override
     public int total(Pager pager) {
         return sql.selectOne("free.total", pager);
+    }
+
+    @Override
+    public void replyAdd(Comment reply) {
+        sql.insert("free.replyAdd",reply);
+    }
+
+    @Override
+    public List<Comment> replyList(int num) {
+        return sql.selectList("free.replyList", num);
     }
 }

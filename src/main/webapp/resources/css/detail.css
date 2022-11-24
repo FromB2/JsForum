@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 *{
     padding: 0;
@@ -11,6 +12,59 @@
 body{
     background-color: #0a0a0c;
 }
+.header{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5);
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    position: fixed;
+    z-index: 3;
+}
+.nav_login span{
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.nav_login a{
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    padding: 7px 25px;
+    border-radius: 100px;
+    font-size:14px;
+}
+.nav_login a:hover{
+    background: rgba(255,255,255,0.5);
+}
+.nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.nav li a{
+    color: #ffffff;
+    padding:6px 12px;
+    position: relative;
+}
+.nav li a::after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 4px;
+    background: #f1c40f;
+    transition: all .2s ease-out;
+    border-radius: 10px;
+}
+.nav li a:hover::after{
+    width: 100%;
+}
 .img_box{
     max-width: 100vw;
 }
@@ -18,19 +72,26 @@ body{
 .img_box .bbb img{width: 100%;}
 .img_box .aaa{
     position: relative;
+
 }
 .img_box .bbb{
     background:linear-gradient(to top, #0a0a0c  50% , transparent);
     padding-top: 13%;
-    padding-bottom: 10%;
+    padding-bottom: 30%;
     text-align: center;
     position: absolute;
     top: 50%;
+    width :100%
+
 }
 .img_box .bbb span{
-    color: #937341;
-    font-size: 70px;
+    background: #CBAC62;
+    background: linear-gradient(to bottom, #CBAC62 25%, #67471F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 130px;
     letter-spacing: 10px;
+/*https://www.cssportal.com/css-text-gradient-generator/텍스트그라디언트개꿀*/
 }
 .img_box .bbb h3{
     margin-top: 5px;
@@ -72,8 +133,23 @@ body{
     text-align: left;
     position: relative;
 }
+.detail_text2_region{
+    margin: 0 auto;
+    max-width: 768px;
+    margin-top: -200px;
+    background-color: #111318;
+    border: solid 1px #937341;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
 .detail_text1 p{
     color: #f0e6d2;
+}
+.detail_text2_region p{
+    color: #f0e6d2;
+    font-size: 20px;
+    margin: 15px;
 }
 .detail_text2 p{
     color: #f0e6d2;

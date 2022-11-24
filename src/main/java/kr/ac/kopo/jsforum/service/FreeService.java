@@ -1,5 +1,6 @@
 package kr.ac.kopo.jsforum.service;
 
+import kr.ac.kopo.jsforum.model.Comment;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.pager.Pager;
 
@@ -16,4 +17,7 @@ public interface FreeService {
 
     void delete(int num);
 
+    void replyAdd(Comment reply);
+
+    List<Comment> replyList(int num);
 }

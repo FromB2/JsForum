@@ -1,6 +1,7 @@
 package kr.ac.kopo.jsforum.service;
 
 import kr.ac.kopo.jsforum.dao.FreeDao;
+import kr.ac.kopo.jsforum.model.Comment;
 import kr.ac.kopo.jsforum.model.Free;
 import kr.ac.kopo.jsforum.pager.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,15 @@ public class FreeServiceImpl implements FreeService{
     @Override
     public void delete(int num) {
         dao.delete(num);
+    }
+
+    @Override
+    public void replyAdd(Comment reply) {
+        dao.replyAdd(reply);
+    }
+
+    @Override
+    public List<Comment> replyList(int num) {
+        return dao.replyList(num);
     }
 }

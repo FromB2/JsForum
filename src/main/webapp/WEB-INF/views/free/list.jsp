@@ -91,7 +91,7 @@
 
         <%--	컨텐츠 끝	--%>
         <div class="pagination">
-            <ul class="pagination pagination-sm justify-content-center">
+            <ul>
                 <li class="page-item"><a href="?page=1" class="page-link">처음</a></li>
                 <li class="page-item"><a href="?page=${pager.prev}" class="page-link">이전</a></li>
                 <c:forEach var="page" items="${pager.list}">

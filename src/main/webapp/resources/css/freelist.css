@@ -130,7 +130,7 @@
 	color: #ffbf40;
 	text-align: center;
 	margin: 0 auto;
-	padding-top: 25%;
+	padding-top: 15%;
 	font-size: 20px;
 	padding-bottom: 5%;
 }
@@ -215,17 +215,25 @@ tbody tr a:hover{
 }
 
 .pagination a {
-	color: black;
+	color: white;
 	float: left;
 	padding: 8px 16px;
 	text-decoration: none;
-	border-radius:50%;
+	margin: 5px;
+}
+.pagination ul{
+	display: flex;
+	background: transparent;
+}
+.pagination li a{
+border: solid 1px #ccc;
 }
 .pagination a.active {
-	background-color: #ffbf40;
-	color: white;
+	background-color: #54b4ff;
+	color: black;
 }
 
 .pagination a:hover:not(.active) {
 	background-color: silver;
 }
+
