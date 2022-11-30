@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<div class="intro_bg">
 <div class="header">
     <ul class="nav">
         <div class="jflogo">
@@ -25,6 +26,7 @@
         </c:if>
     </ul>
 </div>
+    <div class="free_text_box">
 <div class="free_text_header">
     ${item.userId}<span> <fmt:formatDate value="${item.pubDate}" pattern="yyyy-MM-dd hh:mm:ss"/></span>
     <div>조회수:999 <span> 추천:999</span></div>
@@ -79,6 +81,9 @@
             <button>등록</button>
         </div>
     </form>
+
+</div>
+    </div>
 
 </div>
 <footer class="footer">

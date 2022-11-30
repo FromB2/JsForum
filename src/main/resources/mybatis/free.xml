@@ -5,6 +5,7 @@
     <select id="total" resultType="Integer">
         SELECT COUNT(*)
         FROM free
+        where on_off=1
     </select>
 
     <sql id="search">
@@ -12,7 +13,7 @@
 
         <if test="search == 1">
             <where>
-                name LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+                name LIKE CONCAT(CONCAT('%', #{keyword}), '%') and on_off=1
             </where>
         </if>
 
@@ -22,15 +23,15 @@
 
     <select id="list" resultType="Free">
         SELECT * FROM (<include refid="search"></include>) T1
+        where on_off=1
     </select>
     <delete id="delete">
-        DELETE
-        FROM free
+        UPDATE free SET on_off=0
         WHERE num = #{num}
     </delete>
     <insert id="add">
-        INSERT INTO free (name, pub_date, user_id, contents)
-        VALUES (#{name}, now(), #{userId}, #{contents})
+        INSERT INTO free (name, pub_date, user_id, contents,on_off)
+        VALUES (#{name}, now(), #{userId}, #{contents},1)
     </insert>
     <update id="update">
         UPDATE free
