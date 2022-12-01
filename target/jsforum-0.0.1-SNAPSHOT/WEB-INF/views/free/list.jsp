@@ -67,7 +67,7 @@
                 <tbody>
                 <c:if test="${list.size() < 1 }">
                     <tr>
-                        <td>게시글이 없습니다.</td>
+                        <td colspan="4;">게시글이 없습니다.</td>
                     </tr>
                 </c:if>
                 <c:forEach var="item" items="${list}">
