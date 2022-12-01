@@ -30,7 +30,7 @@
         })
 
     </script>
-    <title>챔피언 리스트</title>
+    <title>게시물 상세페이지</title>
 </head>
 <body>
 <div class="intro_bg">
@@ -59,7 +59,7 @@
     <div class="free_text_box">
         <div class="free_text_header">
             ${item.userId}<span> <fmt:formatDate value="${item.pubDate}" pattern="yyyy-MM-dd hh:mm:ss"/></span>
-            <div>조회수:999 <span> 추천:999</span></div>
+            <div><span></span></div>
         </div>
         <div class="free_text_contents">
             <div class="set_bar">

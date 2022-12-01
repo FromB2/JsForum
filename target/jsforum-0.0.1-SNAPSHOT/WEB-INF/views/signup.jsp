@@ -60,6 +60,11 @@
                 form.id.focus();
                 return;
             }
+            if(form.name.value == "") {
+                alert("이름을 입력 해 주세요");
+                form.name.focus();
+                return;
+            }
 
             if(form.pw.value == "") {
                 alert("비밀번호를 입력 해 주세요");
@@ -79,11 +84,7 @@
                 return;
             }
 
-            if(form.name.value == "") {
-                alert("이름을 입력 해 주세요");
-                form.name.focus();
-                return;
-            }
+
 
             form.submit();
         }

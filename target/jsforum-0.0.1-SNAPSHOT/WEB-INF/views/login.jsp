@@ -2,11 +2,7 @@
 
 <html>
 <head>
-
-    <script
-            src="https://code.jquery.com/jquery-3.6.1.js">
-    </script>
-    <title>로그인 페이지</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <link href="resources/css/login.css" rel="stylesheet" type="text/css">
 
     <script>
@@ -29,6 +25,9 @@
         });
 
     </script>
+
+    <title>로그인 페이지</title>
+
 </head>
 
 <body>
@@ -45,9 +44,7 @@
             <label for="id">비밀번호</label>
         </div>
         <div class="btn-area">
-            <button id="btn"
-                    type="submit">로그인
-            </button>
+            <button id="btn" type="submit">로그인</button>
         </div>
         <div class="caption">
             <div>
