@@ -86,4 +86,15 @@ public class FreeController {
         service.delete(num);
         return "redirect:/free/list";
     }
+    @GetMapping("/detail/{num}/delete_comment")
+    public String deleteComment(@PathVariable int num,@SessionAttribute User user){
+        Reply item = service.replyItem(num);
+        if(item.getReplyWriter()==user.getNum()) {
+            service.deleteComment(item);
+            return "redirect:/free/detail/"+item.getReplyFreeNum();
+        }else {
+            return "redirect:/free/detail/"+item.getReplyFreeNum();
+        }
+
+    }
 }

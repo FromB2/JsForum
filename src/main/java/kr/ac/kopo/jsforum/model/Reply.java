@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Reply {
-
+    private int replyNum;
     private int replyWriter;
     private int replyFreeNum;
     private String replyContent;

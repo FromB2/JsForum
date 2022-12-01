@@ -23,4 +23,8 @@ public interface FreeDao {
     void replyAdd(Reply reply);
 
     List<Reply> replyList(int num);
+
+    void deleteComment(Reply item);
+
+    Reply replyItem(int num);
 }

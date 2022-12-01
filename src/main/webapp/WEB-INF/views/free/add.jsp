@@ -1,13 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <link href="../resources/css/freeadd.css" rel="stylesheet" type="text/css">
     <title>게시글 작성 페이지</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link href="/resources/summernote/summernote.min.css" rel="stylesheet">
+    <script src="/resources/summernote/summernote.min.js"></script>
+    <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+    <script>
+        $(function () {
+            $("#emdfhr").click(e => {
+                if ($("input[name='name'].need").val() == "") {
+                    alert("제목은 공백이 불가능합니다.");
+                    return;
+                } else if ($("textarea[name='contents'].need").val() == "") {
+                    alert("내용을 입력해 주세요");
+                    return;
+                } else {
+                    $("#emdfhr2").submit();
+                }
+            })
+        });
 
+    </script>
+    <link href="/resources/css/freeupdate.css" rel="stylesheet" type="text/css">
 </head>
-<link href="/resources/css/freeupdate.css" rel="stylesheet" type="text/css">
 <body>
 <div class="header">
     <ul class="nav">
@@ -31,21 +50,23 @@
 </div>
 <div>
     <div>
-        <form method="post">
+        <form id="emdfhr2" method="post">
             <div class="JM">
                 <div class="JM_move">
                     <label>제목:</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" class="need">
                 </div>
             </div>
 
             <div class="NY">
-                <textarea name="contents"></textarea>
+                <textarea name="contents" class="need"></textarea>
             </div>
 
             <div class="set_bar">
-                <button>등록</button>
-                <a href="/free/list"><button type="button">취소</button></a>
+                <button type="button" id="emdfhr">등록</button>
+                <a href="/free/list">
+                    <button type="button">취소</button>
+                </a>
             </div>
         </form>
     </div>

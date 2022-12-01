@@ -142,3 +142,11 @@ body{
     margin-left: 5px;
 }
 
+.note-editor.note-airframe, .note-editor.note-frame{
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 600px;
+}
+.note-statusbar{
+    display: none;
+}

@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -53,5 +54,15 @@ public class FreeDaoImpl implements FreeDao{
     @Override
     public List<Reply> replyList(int num) {
         return sql.selectList("free.replyList", num);
+    }
+
+    @Override
+    public void deleteComment(Reply item) {
+        sql.delete("free.deleteComment",item);
+    }
+
+    @Override
+    public Reply replyItem(int num) {
+        return sql.selectOne("free.replyItem",num);
     }
 }

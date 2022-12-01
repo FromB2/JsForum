@@ -29,6 +29,10 @@
         UPDATE free SET on_off=0
         WHERE num = #{num}
     </delete>
+
+    <delete id="deleteComment">
+            delete from reply where replyNum=#{replyNum} AND replywriter=#{replyWriter}
+    </delete>
     <insert id="add">
         INSERT INTO free (name, pub_date, user_id, contents,on_off)
         VALUES (#{name}, now(), #{userId}, #{contents},1)
@@ -52,9 +56,15 @@
     </insert>
 
     <select id="replyList" resultType="Reply">
-        SELECT reply.replyNum, reply.replyContent,reply.regDate,user.id
+        SELECT reply.*,user.id
         FROM reply LEFT JOIN free ON(reply.replyFreeNum=free.num)
                    LEFT JOIN user ON(reply.replyWriter=user.num)
         WHERE replyFreeNum = #{num}
+    </select>
+
+    <select id="replyItem" resultType="Reply">
+        select *
+        from reply
+        where replyNum=#{replyNum}
     </select>
 </mapper>
