@@ -26,7 +26,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-    opacity:0.8;
     content: "";
 }
 .header{
@@ -39,156 +38,190 @@
     position: fixed;
     z-index: 3;
 }
-.footer{
-    display: flex;
-    background: rgba(0,0,0,0.5);
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    color: #ffffff;
-    margin-top: 70%;
-}
-.footer .nav > div:nth-child(1){
-    flex: 5;
-}
-.footer .nav > div:nth-child(2){
-    flex: 7.5;
-}
-.nav_login span{
-    color: white;
-    font-size: 14px;
-    margin-right: 10px;
-}
-.nav_login a{
-    color: #ffffff;
-    border: solid 1px #ffffff;
-    padding: 7px 25px;
-    border-radius: 100px;
-    font-size:14px;
-}
-.nav_login a:hover{
-    background: rgba(255,255,255,0.5);
-}
-.nav{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-.nav li a{
-    color: #ffffff;
-    padding:6px 12px;
-    position: relative;
-}
-.nav li a::after{
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 4px;
-    background: #f1c40f;
-    transition: all .2s ease-out;
-    border-radius: 10px;
-}
-.nav li a:hover::after{
-    width: 100%;
-}
-.searchArea{
-    max-width: 450px;
-    height:40px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 5px;
-    margin-top:24px;
-    margin-left:auto;
-    margin-right: auto;
-}
-.searchArea > form > input{
-    border: none;
-    height:40px;
-    background: rgba(0,0,0,0.0);
-    color:#fff;
-    padding-left:10px;
-    width:300px
-}
-.searchArea > form > button {
-    width:50px;
-    color:#ffbf40;
-    font-weight: bold;
-    cursor:pointer;
-    background: transparent;
-    border-color: transparent;
-}
-.select_hide{
-    visibility: hidden;
-}
-.form_size{
-    width: 100%;
-}
-.intro_text{
-    color: #ffbf40;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 25%;
-    font-size: 20px;
-    padding-bottom: 5%;
-}
-.intro_text h1{
-    font-family: 'Noto Sans KR', serif;
-}
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35vh;
-    flex-wrap: wrap;
-    max-width: 1240px;
-    margin: 0 auto;
 
-}
-.container a{
-    margin-right: 20px;
-    margin-left: 20px;
-}
-.card{
-    margin: 10px;
-    position: relative;
-    width: 250px;
-    height: 313px;
-    overflow: hidden;
-    transition: 0.5s;
-    border-radius: 10px;
-}
-.contents{
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    background: linear-gradient(to top, #777777, transparent);
-    color: #ffffff;
-    text-align: center;
-    padding-top: 220px;
-    box-sizing: border-box;
-    transition: 0.5s;
-}
-.contents h2{
-    font-size: 30px;
-}
-.contents span{
-    display: block;
-    font-size: 14px;
-    color: #ffbf40;
-    margin-top: 10px;
-}
-.card:hover .contents{
-    top: 0;
-}
-.card:hover{
-    transform: translateY(-20px);
-    box-shadow: 0 10px 20px #000;
+
+
+
+    .footer {
+        display: flex;
+        background: rgba(0, 0, 0, 0.5);
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        color: #ffffff;
+        margin-top: 10%;
+    }
+
+    .footer .nav > div:nth-child(1) {
+        flex: 5;
+    }
+
+    .footer .nav > div:nth-child(2) {
+        flex: 7.5;
+    }
+
+    .nav_login span {
+        color: white;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .nav_login a {
+        color: #ffffff;
+        border: solid 1px #ffffff;
+        padding: 7px 25px;
+        border-radius: 100px;
+        font-size: 14px;
+    }
+
+    .nav_login a:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .nav li a {
+        color: #ffffff;
+        padding: 6px 12px;
+        position: relative;
+    }
+
+    .nav li a::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 4px;
+        background: #f1c40f;
+        transition: all .2s ease-out;
+        border-radius: 10px;
+    }
+
+    .nav li a:hover::after {
+        width: 100%;
+    }
+
+    .searchArea {
+        max-width: 450px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        margin-top: 24px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .searchArea > form > input {
+        border: none;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.0);
+        color: #fff;
+        padding-left: 10px;
+        width: 300px
+    }
+
+    .searchArea > form > button {
+        width: 50px;
+        color: #ffbf40;
+        font-weight: bold;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+    }
+
+    .select_hide {
+        visibility: hidden;
+    }
+
+    .form_size {
+        width: 100%;
+    }
+
+    .intro_text {
+        color: #ffbf40;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 25%;
+        font-size: 20px;
+        padding-bottom: 5%;
+    }
+
+    .intro_text h1 {
+        font-family: 'Noto Sans KR', serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*height: 35vh;*/
+        flex-wrap: wrap;
+        max-width: 1240px;
+        margin: 0 auto;
+
+    }
+
+    .container a {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .card {
+        margin: 10px;
+        position: relative;
+        width: 250px;
+        height: 313px;
+        overflow: hidden;
+        transition: 0.5s;
+        border-radius: 10px;
+    }
+
+    .contents {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        background: linear-gradient(to top, #777777, transparent);
+        color: #ffffff;
+        text-align: center;
+        padding-top: 220px;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    .contents h2 {
+        font-size: 30px;
+    }
+
+    .contents span {
+        display: block;
+        font-size: 14px;
+        color: #ffbf40;
+        margin-top: 10px;
+    }
+
+    .card:hover .contents {
+        top: 0;
+    }
+
+    .card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 10px 20px #000;
+    }
+@media screen and (max-width: 600px){
+    .nav_login{ display: none;
+
+    }
+
 }

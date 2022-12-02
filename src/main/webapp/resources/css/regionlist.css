@@ -26,7 +26,6 @@
 	top: 0;
 	left: 0;
 	z-index: -1;
-	opacity:0.8;
 	content: "";
 }
 .header{
@@ -45,7 +44,7 @@
 	padding-top: 1.5%;
 	padding-bottom: 1.5%;
 	color: #ffffff;
-	margin-top: 70%;
+	margin-top: 10%;
 }
 .footer .nav > div:nth-child(1){
 	flex: 5;
@@ -142,7 +141,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 35vh;
+	/*height: 35vh;*/
 	flex-wrap: wrap;
 	max-width: 1240px;
 	margin: 0 auto;
@@ -195,4 +194,10 @@
 .card:hover{
 	transform: translateY(-20px);
 	box-shadow: 0 10px 20px #000;
+}
+@media screen and (max-width: 600px){
+	.nav_login {
+		display: none;
+
+	}
 }
